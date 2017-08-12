@@ -101,6 +101,20 @@ function madLib(word1, word2, word3, word4){
 console.log(madLib('feisty ', 'sasquatch ', 'runs ', 'wildly'));
 
 // 10. Rovarspraket
-function rovarspraket(word1, word2, word3){
-  if 
+
+function rovarspraket(phrase){
+  let vowels = "aeiou ,;.!?";             // includes vowels and punctuation marks
+  let newPhrase = '';                     // sets newPhrase to an empty string for end result
+
+  for (i = 0; i < phrase.length; i++){    // loops over string passed in
+    let letter = phrase[i];               // letter = each character in string passed in
+
+    if (vowels.includes(letter)){          // if statement to perform action based if letter is vowel or not
+      newPhrase += letter;                // if vowel just add vowel to new string/phrase
+    } else {
+      newPhrase += letter + 'o' + letter;   // if letter is a consonant add consonant+o+consonant
+    }
+  }
+  return newPhrase;                       // return the newPhrase with rovarspraket applied
 }
+let result = console.log(rovarspraket("Happy Birthday Dan!"));
